@@ -1,0 +1,23 @@
+{
+  "targetFile": "CLAUDE.md",
+  "frameworks": [
+    {
+      "key": "nextjs",
+      "name": "Next.js",
+      "installedAt": "2026-04-18T21:07:25.726Z",
+      "updatedAt": "2026-04-18T21:07:25.726Z"
+    },
+    {
+      "key": "prisma",
+      "name": "Prisma",
+      "installedAt": "2026-04-18T21:07:25.726Z",
+      "updatedAt": "2026-04-18T21:07:25.726Z"
+    },
+    {
+      "key": "tailwind",
+      "name": "Tailwind CSS",
+      "installedAt": "2026-04-18T21:07:25.726Z",
+      "updatedAt": "2026-04-18T21:07:25.726Z"
+    }
+  ]
+}
