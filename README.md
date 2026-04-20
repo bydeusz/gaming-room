@@ -20,6 +20,36 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Authentication
+
+Auth is powered by [Auth.js v5](https://authjs.dev) (`next-auth@5`) with the Prisma adapter and database-backed sessions. GitHub and Google OAuth providers are enabled by default so any visitor can sign up and sign in.
+
+### First-time setup
+
+1. Copy `.env.example` to `.env` and fill in the values below.
+2. Generate a secret:
+
+   ```bash
+   npx auth secret
+   ```
+
+   Paste the output into `AUTH_SECRET`.
+3. Create OAuth apps and copy their credentials into `.env`:
+
+   - **GitHub:** https://github.com/settings/developers — set the callback URL to `http://localhost:3000/api/auth/callback/github`.
+   - **Google:** https://console.cloud.google.com/apis/credentials — set the callback URL to `http://localhost:3000/api/auth/callback/google`.
+4. Start Postgres and apply migrations:
+
+   ```bash
+   docker compose -f _infra/docker-compose.yml up -d
+   npx prisma migrate dev
+   ```
+5. Run the dev server and click **Sign in** in the header:
+
+   ```bash
+   npm run dev
+   ```
+
 ## Formatting
 
 Prettier is configured for consistent code style. Available scripts:
