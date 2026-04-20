@@ -22,33 +22,28 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Authentication
 
-Auth is powered by [Auth.js v5](https://authjs.dev) (`next-auth@5`) with the Prisma adapter and database-backed sessions. GitHub and Google OAuth providers are enabled by default so any visitor can sign up and sign in.
+Auth is powered by [Auth.js v5](https://authjs.dev) (`next-auth@5`) with the Credentials provider — visitors sign up with an email and a password of their choice. Passwords are hashed with `bcryptjs` and sessions are JWT-based.
 
 ### First-time setup
 
-1. Copy `.env.example` to `.env` and fill in the values below.
-2. Generate a secret:
+1. Copy `.env.example` to `.env`.
+2. Generate a secret and paste it into `AUTH_SECRET`:
 
    ```bash
    npx auth secret
    ```
-
-   Paste the output into `AUTH_SECRET`.
-3. Create OAuth apps and copy their credentials into `.env`:
-
-   - **GitHub:** https://github.com/settings/developers — set the callback URL to `http://localhost:3000/api/auth/callback/github`.
-   - **Google:** https://console.cloud.google.com/apis/credentials — set the callback URL to `http://localhost:3000/api/auth/callback/google`.
-4. Start Postgres and apply migrations:
+3. Start Postgres and apply migrations:
 
    ```bash
    docker compose -f _infra/docker-compose.yml up -d
    npx prisma migrate dev
    ```
-5. Run the dev server and click **Sign in** in the header:
+4. Run the dev server:
 
    ```bash
    npm run dev
    ```
+5. Open `http://localhost:3000`, click **Sign up** to create an account, or **Sign in** if you already have one.
 
 ## Formatting
 

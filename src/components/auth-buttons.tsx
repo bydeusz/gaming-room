@@ -1,7 +1,8 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export function AuthButtons() {
   const { data: session, status } = useSession();
@@ -28,8 +29,17 @@ export function AuthButtons() {
   }
 
   return (
-    <Button size="sm" onClick={() => signIn()}>
-      Sign in
-    </Button>
+    <div className="flex items-center gap-2">
+      <Link
+        href="/signin"
+        className={buttonVariants({ variant: "ghost", size: "sm" })}>
+        Sign in
+      </Link>
+      <Link
+        href="/signup"
+        className={buttonVariants({ variant: "default", size: "sm" })}>
+        Sign up
+      </Link>
+    </div>
   );
 }
