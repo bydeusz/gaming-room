@@ -11,9 +11,7 @@ export default async function SigninPage() {
     <main className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm space-y-6 rounded-xl border p-6 shadow-sm">
         <div className="space-y-1">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Sign in
-          </h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Sign in</h1>
           <p className="text-muted-foreground text-sm">
             Welcome back — sign in with your email and password.
           </p>

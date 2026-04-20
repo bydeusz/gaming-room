@@ -32,17 +32,20 @@ Auth is powered by [Auth.js v5](https://authjs.dev) (`next-auth@5`) with the Cre
    ```bash
    npx auth secret
    ```
+
 3. Start Postgres and apply migrations:
 
    ```bash
    docker compose -f _infra/docker-compose.yml up -d
    npx prisma migrate dev
    ```
+
 4. Run the dev server:
 
    ```bash
    npm run dev
    ```
+
 5. Open `http://localhost:3000`, click **Sign up** to create an account, or **Sign in** if you already have one.
 
 ## Formatting
