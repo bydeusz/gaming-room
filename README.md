@@ -20,6 +20,34 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Authentication
+
+Auth is powered by [Auth.js v5](https://authjs.dev) (`next-auth@5`) with the Credentials provider — visitors sign up with an email and a password of their choice. Passwords are hashed with `bcryptjs` and sessions are JWT-based.
+
+### First-time setup
+
+1. Copy `.env.example` to `.env`.
+2. Generate a secret and paste it into `AUTH_SECRET`:
+
+   ```bash
+   npx auth secret
+   ```
+
+3. Start Postgres and apply migrations:
+
+   ```bash
+   docker compose -f _infra/docker-compose.yml up -d
+   npx prisma migrate dev
+   ```
+
+4. Run the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open `http://localhost:3000`, click **Sign up** to create an account, or **Sign in** if you already have one.
+
 ## Formatting
 
 Prettier is configured for consistent code style. Available scripts:

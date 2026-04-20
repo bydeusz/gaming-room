@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { AuthButtons } from "@/components/auth-buttons";
 
 export default function Home() {
   return (
@@ -8,7 +9,10 @@ export default function Home() {
         <span className="text-lg font-semibold tracking-tight">
           Gaming Room
         </span>
-        <ModeToggle />
+        <div className="flex items-center gap-3">
+          <AuthButtons />
+          <ModeToggle />
+        </div>
       </header>
       <main className="flex flex-1 flex-col items-center justify-center gap-6 px-8 pb-16">
         <h1 className="max-w-xl text-center text-3xl font-semibold tracking-tight">
