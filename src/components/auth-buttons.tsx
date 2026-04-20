@@ -29,17 +29,10 @@ export function AuthButtons() {
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <Link
-        href="/signin"
-        className={buttonVariants({ variant: "ghost", size: "sm" })}>
-        Sign in
-      </Link>
-      <Link
-        href="/signup"
-        className={buttonVariants({ variant: "default", size: "sm" })}>
-        Sign up
-      </Link>
-    </div>
+    <Link
+      href="/signin"
+      className={buttonVariants({ variant: "default", size: "sm" })}>
+      Sign in
+    </Link>
   );
 }
